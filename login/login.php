@@ -19,11 +19,24 @@
 		$password = mysqli_real_escape_string($con, $password);
 		// Check user is exist in the database
 		$query    = "SELECT * FROM `users` WHERE username='$username'
-                     AND pass='" . md5($password) . "'";
-		$result = mysqli_query($con, $query) or die(mysql_error());
+                     AND password='" . md5($password) . "'";
+		$result = mysqli_query($con, $query) or die(mysqli_error($con));
 		$rows = mysqli_num_rows($result);
+		$row = mysqli_fetch_array($result);
 		if ($rows == 1) {
-			$_SESSION['username'] = $username;
+			$_SESSION['username'] = $row['username'];
+			$_SESSION['email'] = $row['email'];
+			$_SESSION['fname'] = $row['fname'];
+			$_SESSION['lname'] = $row['lname'];
+			$_SESSION['gender'] = $row['gender'];
+			$_SESSION['dob'] = $row['dob'];
+			$_SESSION['phone'] = $row['phone'];
+			$_SESSION['lang'] = $row['lang'];
+			$_SESSION['country'] = $row['country'];
+			$_SESSION['state'] = $row['state'];
+			$_SESSION['coll'] = $row['coll'];
+			$_SESSION['univ'] = $row['univ'];
+			$_SESSION['create_datetime'] = $row['create_datetime'];
 			// Redirect to user dashboard page
 			header("Location: dashboard.php");
 		} else {

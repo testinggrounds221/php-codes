@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS `users` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(50) NOT NULL,
+ `email` varchar(50) NOT NULL,
+ `password` varchar(50) NOT NULL,
+ `fname` varchar(50) NOT NULL,
+ `lname` varchar(50) NOT NULL,
+ `gender` varchar(50) NOT NULL,
+ `dob` varchar(50) NOT NULL, 
+ `phone` varchar(50) NOT NULL,
+ `lang` varchar(50) NOT NULL,
+ `country` varchar(50) NOT NULL,
+ `state` varchar(50) NOT NULL, 
+ `coll` varchar(50) NOT NULL,
+ `univ` varchar(50) NOT NULL,
+ `create_datetime` datetime NOT NULL,
+ PRIMARY KEY (`id`)
+);

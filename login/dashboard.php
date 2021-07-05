@@ -7,60 +7,127 @@ include("auth_session.php");
 
 <head>
 	<meta charset="utf-8">
-	<title>Dashboard - Client area</title>
+	<title>Profile Page</title>
 	<!-- <link rel="stylesheet" href="style.css" /> -->
 	<link rel="stylesheet" href="profile_styles.css" />
+	<style>
+		body {
+			text-align: center;
+		}
+
+		h2 {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-radius: 9px;
+			border-style: hidden;
+			/* hide standard table (collapsed) border */
+			box-shadow: 0 0 0 1px #666;
+			/* this draws the table border  */
+
+			width: 100%;
+			border-collapse: collapse;
+			max-width: 900px;
+			margin: auto;
+		}
+
+		tr {
+			height: 55px;
+			border-bottom: 1px lightslategrey solid;
+		}
+
+		.key {
+			width: 50%;
+			text-align: center;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+
+		.value {
+			font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+				sans-serif;
+			text-align: left;
+
+			color: lightslategrey;
+		}
+
+		button {
+			margin: 20px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: whitesmoke;
+			border: hidden;
+			background-color: tomato;
+			border-radius: 4px;
+			padding: 10px;
+			cursor: pointer;
+		}
+	</style>
 
 </head>
 
 <body>
 	<div class="form">
-		<!-- <p>Hey, <?php echo $_SESSION['username']; ?>!</p> -->
-		<p>You are in user dashboard page.</p>
-		<p><a href="logout.php">Logout</a></p>
+
+		<h2>Profile Page</h2>
+
+		<!-- <p><a href="logout.php">Logout</a></p> -->
+
 	</div>
-	<div class="container">
-		<header>
-			<i class="fa fa-bars" aria-hidden="true"></i>
-		</header>
-		<main>
-			<div class="row">
-				<div class="left col-lg-4">
-					<div class="photo-left">
-						<img class="photo" src="https://images.pexels.com/photos/1804796/pexels-photo-1804796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-						<div class="active"></div>
-					</div>
-					<?php echo $_SESSION['country']; ?>
-					<h4 class="name">Jane Doe</h4>
-					<h4 class="name"></h4>
-					<?php echo $_SESSION['username']; ?>
+	<table>
+		<tr>
+			<td class="key">First Name</td>
+			<td class="value"><?php echo $_SESSION['fname']; ?></td>
+		</tr>
 
+		<tr>
+			<td class="key">Last Name</td>
+			<td class="value"><?php echo $_SESSION['lname']; ?></td>
+		</tr>
 
-					<div class="stats row">
-						<div class="stat col-xs-4" style="padding-right: 50px;">
-							<p class="number-stat">3,619</p>
-							<p class="desc-stat"><?php echo $_SESSION['univ']; ?></p>
-						</div>
-						<div class="stat col-xs-4">
-							<p class="number-stat">42</p>
-							<p class="desc-stat"><?php echo $_SESSION['coll']; ?></p>
-						</div>
-						<div class="stat col-xs-4" style="padding-left: 50px;">
-							<p class="number-stat">38</p>
-							<p class="desc-stat">Uploads</p>
-						</div>
-					</div>
-					<p class="desc">Hi ! My name is Jane Doe. I'm a UI/UX Designer from Paris, in France. I really enjoy photography and mountains.</p>
-					<div class="social">
-						<i class="fa fa-facebook-square" aria-hidden="true"></i>
-						<i class="fa fa-twitter-square" aria-hidden="true"></i>
-						<i class="fa fa-pinterest-square" aria-hidden="true"></i>
-						<i class="fa fa-tumblr-square" aria-hidden="true"></i>
-					</div>
-				</div>
+		<tr>
+			<td class="key">Gender</td>
+			<td class="value"><?php echo $_SESSION['gender']; ?></td>
+		</tr>
 
-		</main>
-	</div>
+		<tr>
+			<td class="key">Date of Birth</td>
+			<td class="value"><?php echo $_SESSION['dob']; ?></td>
+		</tr>
+
+		<tr>
+			<td class="key">Phone Number</td>
+			<td class="value"><?php echo $_SESSION['phone']; ?></td>
+		</tr>
+
+		<tr>
+			<td class="key">Preffered Language</td>
+			<td class="value"><?php echo $_SESSION['lang']; ?></td>
+		</tr>
+
+		<tr>
+			<td class="key">Country</td>
+			<td class="value"><?php echo $_SESSION['country']; ?></td>
+		</tr>
+
+		<tr>
+			<td class="key">State</td>
+			<td class="value"><?php echo $_SESSION['state']; ?></td>
+		</tr>
+
+		<tr>
+			<td class="key">Coll</td>
+			<td class="value"><?php echo $_SESSION['coll']; ?></td>
+		</tr>
+
+		<tr>
+			<td class="key">Univ</td>
+			<td class="value"><?php echo $_SESSION['univ']; ?></td>
+		</tr>
+	</table>
+	<button onclick="location.href = 'logout.php';">Log Out !</button>
+	<!-- <button onclick="location.href = 'http://localhost:8000/';">Search Courses !</button> -->
+
 </body>
 
 </html>

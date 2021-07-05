@@ -95,19 +95,19 @@
 
 			<label for="lang">Choose your preffered Language : </label>
 			<select name="lang">
-				<option value="eng">English</option>
-				<option value="hin">Hindi</option>
-				<option value="tam">French</option>
-				<option value="kan">Germany</option>
+				<option value="English">English</option>
+				<option value="Hindi">Hindi</option>
+				<option value="French">French</option>
+				<option value="Germany">Germany</option>
 			</select>
 			<br /><br />
 			<label for="country">Choose your Country : </label>
 			<br />
 			<select name="country">
-				<option value="in">India</option>
-				<option value="us">US</option>
-				<option value="ger">Germany</option>
-				<option value="fr">France</option>
+				<option value="India">India</option>
+				<option value="US">US</option>
+				<option value="Germany">Germany</option>
+				<option value="France">France</option>
 			</select>
 			<br /><br />
 
